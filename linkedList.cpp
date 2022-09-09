@@ -33,20 +33,15 @@ class listNode {
 		listNode *getNext() {
 			return next; 
 		}
-		int setHead(listNode *h) {
-			head = h; 
-		}
-		listNode *getHead() {
-			return head; 
-		}
 		
+
 };
 
 
 class linkedList {
+	
 	listNode *head;
-	 
-	public:
+	public: 
 		linkedList () {
 			head = NULL;
 		}
@@ -59,6 +54,15 @@ class linkedList {
 				delete deletetable; 
 			}
 		}
+		
+		void setHead(listNode *h) {
+			head = h; 
+		}
+		
+		listNode *getHead() {
+			return head; 
+		}
+		
 		void insert_first(int d) {
 			listNode*new_node= new listNode(d); 
 			
@@ -268,6 +272,27 @@ class linkedList {
 			} 
 			head = prev; 
 		}
+		
+		void displayLLRevRecursive(listNode *temp) {
+			
+			 
+			if(temp == NULL)  return; 
+			
+			displayLLRevRecursive(temp->getNext());
+			cout<<"\t"<<temp->getData();
+		}
+		
+		listNode *reverseLLRecursive(listNode *head) {
+			listNode *temp;
+			if(head->getNext()==NULL)  
+				return head; 
+			
+			temp = reverseLLRecursive(head->getNext());
+			head->getNext()->setNext(head);
+			head->setNext(NULL);
+			
+			return temp; 
+		}
 };
 
 // iterator =  a variable used to traverse in data structures. 
@@ -293,33 +318,12 @@ int main() {
 	
 	list.insert_first(65);
 	list.display();
-	//list.deleteByData(70);
-	//list.display();
-	//list.delete_last(); 
-	//list.display(); 
 	
-	/*list.insertByPos(50, 4);
+	cout<<"Reverse linked list using recurssion:- "<<endl;
+	list.displayLLRevRecursive(list.getHead());
+	cout<<endl;
+	list.setHead(list.reverseLLRecursive(list.getHead()));
 	list.display();
-	
-	list.deleteByPos(4);
-	list.display();*/ 
-	
-	//list.displayAlter(); 
-	
-	list.reverseList();
-	list.display();
-	//cout<<"Next elemnet is:- "<<list.getNext()<<endl;	
-	/* 1 insert last.
-		insert first
-		insert at position.
-		delete last.
-		delete first.
-		delete by position.
-		reverse.
-		insert before data.
-		display. 
-		exit. 
-	*/
 	
 	return 0; 
 }
