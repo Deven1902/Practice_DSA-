@@ -1,0 +1,19 @@
+//asgn 4:- return power of n^m; 
+
+#include<iostream>
+using namespace std; 
+
+int calPower(int b, int p) {
+	if(p!=0) 
+		return b*calPower(b,p-1);
+	else 
+		return 1; 
+}
+
+int main() {
+	int base = 5, power = 12; 
+	
+	cout<<"Calculated power is:- "<< calPower(base, power);
+	 
+	return 0; 
+}
