@@ -1,6 +1,7 @@
 // circular queue. 
 
 /* circular queue gives u the max utilization of array subcripts. 
+circular queue does not have a specific starting point.
 
 */
 
