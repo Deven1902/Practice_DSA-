@@ -1,0 +1,16 @@
+// function to find the middle node of the linked list. 
+// this is the most optimized approach in solving this problem. 
+// here we require half the time to solve the problem, as the loop will only run for n/2 time instead complete n times.
+// when the fast pointer will reach the end of linked list, that time the slow one would have reached the centre of the linkedList and hence we return slow. 
+
+listNode getMidNode(linkedList head) {
+			listNode *fast, *slow; 
+			
+			listNode fast = head;
+			listnode slow = head; 
+			
+			while(fast != NULL && fast->getNext()!=NULL) {
+				slow = slow->getNext();
+				fast = fast->getNext()->getNext(); 
+			}
+			return slow; 
