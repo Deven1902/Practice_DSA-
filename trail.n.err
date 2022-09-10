@@ -1,0 +1,70 @@
+Mini project Asgn! 
+create a class student having rno, name, marks, grade, all getter and setter functions,
+defauylt and copy constructor and destructor. 
+
+create a linkedList of objetc of studnet class
+class student {
+	int rno; 
+	cahr name[15]; 
+	float marks; 
+	char grade;
+	
+	public:
+		//default and parameterized constructors
+		student(int r, char *nm, flaat mk, char g) {
+			rno = r ;
+			strcpy(name = nm);
+			marks = mk;
+			grade =g; 
+	    }
+		// getter and setter functions; 
+};
+
+class studNode {
+studnet *stud; 
+node *next;
+
+public:
+	Node() {
+	stud = new student(0, "NA", 0.0, "F");
+	next = NULL; 
+}
+
+	Node(Int r, char *nm, float mk, char g) {
+		stud = new student (r, nm, mk,g);
+		next = NULL; 
+}
+
+	void insertFirst(Int r, char *nm, float mk, char g) {
+		stud = new studnet (0, NA, 0.0, F);  
+	}
+	
+	// write getter and setter functions. 
+	
+};
+
+class studLL {
+	node *head; 
+	studLL() {
+	head = NULL; 
+	
+	}
+}
+
+int main() {
+	insert first 
+		insert by passing student address
+		insert by passing student data
+		
+	insert last
+		by passing student address
+		by passing student data
+		
+	insert by position
+	insert before rno
+	delete first
+	delete last
+	display
+	
+}
+*/
