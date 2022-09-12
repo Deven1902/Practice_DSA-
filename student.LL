@@ -212,9 +212,7 @@ class studNode {
 			stud = s;
 		}
 		
-		student *getStud() {
-			student *st; 
-			cout<<st->getName();
+		student *getStud() { 
 			return stud;
 		}
 };
@@ -237,12 +235,12 @@ class studLL {
 			head = newNode; 
 		}
 		
-		void display() {
+		void displayLL() {
 			studNode *iter;
 			iter = head; 
 			while(iter!=NULL) {
-				
-				cout<<iter->getStud()<<"\t->"; 
+				student *s = iter->getStud();
+				s->display(); 
 				iter = iter->getNext();
 			}
 			cout<<endl;
@@ -253,9 +251,27 @@ class studLL {
 };
 
 int main() {
-	student s1(45, "Deven", 9.2, 'O'), s2, s3, s4; 
+	// student pointer
+	
+	//student *s; 
+	//s = new student(10, "Dev", 92.20, 'O'); 
+	student *s1;
+	 //(45, "Deven", 9.2, 'O'), s2, s3, s4; 
 	studLL l1;
-	l1.insertFirst(s1); 
-	l1.display();
+	int roll_no; 
+	char name[15]; 
+	float marks; 
+	char grade; 
+	for(int i=1; i<=3; i++) {
+		cout<<"Enter roll_no, name, marks, grade:- ";
+		cin>>roll_no;
+		cin>>name;
+		cin>>marks;
+		cin>>grade; 
+		s1 = new student(roll_no, name, marks, grade);
+		l1.insertFirst(s1); 
+	}
+	
+	l1.displayLL();
 	return 0; 
 }
