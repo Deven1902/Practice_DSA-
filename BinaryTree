@@ -1,0 +1,64 @@
+// binary tree .
+
+#include<iostream>
+using namespace std; 
+
+class BTNode {
+	int data; 
+	BTNode *left, *right; 
+	
+	public:
+		BTNode() {
+			data = 0; 
+			left = NULL;
+			right = NULL;
+		}
+		
+		BTNode(int d) {
+			data = d;
+			left = NULL;
+			right = NULL;
+		}
+		
+		void setData(int d) {
+			data = d; 
+		}
+		
+		void setleft(BTNode *l) { left = l;}
+		
+		void setRight(BTNode *r) {right = r; }
+		
+		int getData() {return data; }
+		BTNode *getLeft() {return left; }
+		BTNode *getRight() {return right; }
+};
+
+class binaryTree {
+	BTNode *root; 
+	
+	public:
+		binaryTree() {root = NULL; } 
+		void setRoot(BTNode *r) {root =r;}
+		BTNode *getRoot() {return root;}  // this give value stored in root. 
+		BTNode *createNode(int d) {
+			BTNode *newNode = new BTNode(d); 
+			return newNode; 
+		}
+		
+		void preorder(BTNode *r) {
+			if(r==NULL) return; 
+			
+			cout<<r->getData(); 
+			preorder(r->getLeft()); 
+			preorder(r->getRight()); 
+		}
+};
+
+int main() {
+	
+	binaryTree bt; 
+	bt.setRoot(bt.createNode(10)); //==>bt.setRoot(100); 
+	bt.getRoot()->getLeft();
+	bt.getRoot()->getRight();
+	return 0; 
+}
