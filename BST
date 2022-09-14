@@ -1,0 +1,34 @@
+#include<iostream> 
+using namespace std; 
+
+class binaryTree {
+	
+};
+
+
+class BST {
+	BST() { root = NULL }; 
+	BTNode* insert(BTnode *p, int data); {
+		if(p==NULL) p = new BTNode(data);
+		else if(data<p->getData()) p->setLeft(insertBST(p->getleft(),data));
+		
+		
+	}
+	void preorder(BTNode *r) {
+			if(r==NULL) return; 
+			
+			cout<<r->getData()<<"\t"; 
+			preorder(r->getLeft()); 
+			preorder(r->getRight()); 
+	}
+	
+	void inorder(BTNode *p) {
+		if(p==NULL) return; 
+	}
+	
+	void insertBST() {
+		
+	}
+		
+	
+};
