@@ -1,0 +1,53 @@
+/* 
+GFG POTD -> 30 April. 
+
+Powerful Integer -> easy problem. 
+
+Your are given an 2D integer array  intervals whose length is n where intervals[i]=[start,end] 
+means all integers from start to  end inclusive start and end are also present and also we are given an integer k. 
+We have to return the Powerfull Integer.
+Powerfull Integer is that integer that occurs at least k times and if multiple integers  have at least k  occurences,
+we have to return the maximum integer out of all those elements. 
+
+Note: If no integer occurs at least k times return -1 in that case.
+
+Here is a cpp solution. 
+*/
+
+class Solution{
+public:
+    int powerfullInteger(int n,vector<vector<int>> &intervals,int k){
+        // Code here
+        
+        map<int, int> mp;
+        
+        for(auto it:intervals) {
+            int left = it[0], right = it[1];
+            
+            mp[left]++;
+            mp[right + 1]-- ;
+            
+        }
+        
+        int curr = 0;
+        int max_no = -1;
+        bool flag = false; // refering to max num. 
+        
+        for(auto it:mp) {
+            curr += it.second;
+            if(curr >= k) {
+                flag = true;
+                max_no = it.first;
+            }
+            else if(flag == true) {
+                max_no = it.first - 1;
+                flag = false;
+            }
+            else {
+                flag = false; 
+            }
+        }
+        
+        return max_no; 
+    }
+};
