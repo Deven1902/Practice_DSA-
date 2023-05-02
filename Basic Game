@@ -1,0 +1,48 @@
+/* 
+CodeStuido contest. 
+
+Placement Prep Contest By Arsh Goyal:- https://www.codingninjas.com/codestudio/contests/placement-prep-contest
+
+2 May 2023. 
+
+Problem 2:- (Easy Level)
+You are given an array ’A’ of ‘N’ length containing all unique elements and an integer ‘k’.
+
+Two pairs are good if both are adjacent to each other and the first value is smaller than the second value by at most ‘k’.
+
+You can rearrange the array.
+
+You have to find the maximum total number of good pairs in the given array by rearranging the array.
+
+Example :
+A  = [ ‘3’ , ‘5’ , ‘1’ , ‘2’ , ‘7’ ] , k = ’1’.
+One of the optimal rearrangements is [ ‘7’, ‘1’, ‘2’, ‘3’, ‘5’ ]
+The index (1, 2)(0-based) and (2, 3) are good pairs, so our answer is ‘2’. 
+
+Cpp Solution:- 
+*/
+
+#include <bits/stdc++.h> 
+
+
+int basicGame(int &n, int &k, vector<int> &a)
+{
+
+
+  // Write your code here
+
+
+  sort(a.begin(), a.end());
+
+
+    int ans = 0;
+
+
+    for(int i = 1; i < n; i++) {
+        if (a[i] - a[i - 1] <= k)
+          ans++;
+    }
+    return ans;
+
+
+}
