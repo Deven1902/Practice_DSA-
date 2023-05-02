@@ -1,0 +1,64 @@
+/* 
+GFG PTOD -> 2 May. 
+
+Problem Link:- https://practice.geeksforgeeks.org/problems/0a7c7f1089932257071f9fa076f25d353f91e0fd/1
+
+Cake Distribution Problem
+
+Geek is organizing a birthday party, so his friends brought a cake for him. 
+The cake consists of N chunks, whose individual sweetness is represented by the sweetness array. 
+Now at the time of distribution, Geek cuts the cake into K + 1 pieces to distribute among his K friends. 
+One piece he took for himself. 
+
+Each piece consists of some consecutive chunks. He is very kind, so he left the piece with minimum sweetness for him.
+
+You need to find the maximum sweetness that the Geek can get if he distributes the cake optimally.
+
+Cpp solution 👇 
+*/
+
+class Solution{
+    public:
+    // this is a check function
+    bool chk(int mid, vector<int> &arr, int N, int K)
+    {
+        int sum = 0;
+        int count = 0;
+        
+        // Aim is:- Number of pieces > = k
+        
+        for (int i = 0; i < N; i++)
+        {
+            sum += arr[i];
+            if (sum >= mid)
+            {
+                count++;
+                sum = 0;
+            }
+        }
+        return count >= K + 1;
+    }
+    
+    int maxSweetness(vector<int> &sweetness, int N, int K)
+    {
+        // 1e -> means 10 raised 9. 
+        // we took 1 e 14 as we have 9 + 5 = 14 powers of 10. 
+        
+        int start = 1, end = 1e14;
+        int ans = -1;
+        while (start <= end)
+        {
+            int mid = (start + end) / 2;
+            if (chk(mid, sweetness, N, K))
+            {
+                ans = mid;
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+        }
+        return ans;
+    }
+};
