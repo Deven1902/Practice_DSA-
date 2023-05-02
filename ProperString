@@ -1,0 +1,64 @@
+/* 
+CodeStuido contest. 
+
+Placement Prep Contest By Arsh Goyal:- https://www.codingninjas.com/codestudio/contests/placement-prep-contest
+
+2 May 2023. 
+
+Problem 1:- (Easy Level)
+A proper string is defined as a string in which two adjacent characters cannot both be consonants, nor can they both be vowels. 
+One must be a vowel, and the other must be a consonant.
+
+The letters 'a', 'e', 'i', 'o' and 'u' are called vowels. And the remaining letters which are not vowels are called consonants.
+
+Given a string 'S' consisting of 'N' lowercase English letters, your task is to return true if 'S' is a proper string; if not, then return false.
+
+For Example :
+Let's say 'N' = 3 and 'S' = "abe"
+
+In the string, there are no two adjacent characters such that either both are consonants or both are vowels.
+
+Hence the string is a proper string, so we return true.
+
+Cpp Solution:- 
+*/
+
+#include <bits/stdc++.h> 
+bool isProper(string &s) {
+    // Write your code here.
+
+
+    int n = s.size();
+
+
+    for (int i = 1; i < n; ++i) {
+
+
+        bool curr = false;
+
+
+        if (s[i] == 'a' or s[i] == 'e' or s[i] == 'i' 
+          or s[i] == 'o' or s[i] == 'u') {
+            curr = true;
+        }
+
+
+        
+        bool prev = false;
+
+
+        if (s[i - 1] == 'a' or s[i - 1] == 'e' or s[i - 1] == 'i' 
+          or s[i - 1] == 'o' or s[i - 1] == 'u') {
+            prev = true;
+        }
+
+
+        
+        if (curr == prev) {
+            return false;
+        }
+    }
+
+
+    return true;
+}
