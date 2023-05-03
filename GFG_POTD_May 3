@@ -1,0 +1,46 @@
+/* 
+GFG POTD 
+
+3 May 
+
+Make Palindrome 
+
+You are given an array of strings arr of size n. 
+You have to find out if it is possible to make a palindromic string by concatenating the strings in any order. 
+Provided that all the strings given in the array are of equal length.
+
+CPP Solution 👇
+*/ 
+
+class Solution{
+public:
+    bool makePalindrome(int n,vector<string> &arr){
+        // Code here
+        
+        unordered_map<string,int> mp;
+        for(auto it:arr) {
+            string rev=it;
+            reverse(rev.begin(),rev.end());
+            if(mp.find(rev)!=mp.end()) {
+                mp[rev]--;
+                if(mp[rev]==0) mp.erase(rev);
+            }
+            else 
+                mp[it]++;
+                
+        }
+        
+        if(mp.size()==0) 
+            return true;
+            
+        if(mp.size()==1) {
+            string curr=mp.begin()->first;
+            string rev=curr;
+            reverse(rev.begin(),rev.end());
+            return rev==curr;
+        }
+        
+        return false;
+        
+    }
+};
