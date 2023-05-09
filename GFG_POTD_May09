@@ -1,5 +1,19 @@
 /* 
+Author : Deven Nandapurkar
 
+Date : 09/05/2023
+
+Problem : Count Binary Strings With No Consecutive 1s
+
+Difficulty : very hard
+
+Given an integer N. Your task is to find the number of binary strings of length N having no consecutive 1s.
+
+As the number can be large, return the answer modulo 10^9+7.
+
+Problem Link : https://practice.geeksforgeeks.org/problems/37f36b318a7d99c81f17f0a54fc46b5ce06bbe8c/1
+
+Cpp Solution 👇👇
 */ 
 
 /* 
