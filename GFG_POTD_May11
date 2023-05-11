@@ -1,0 +1,68 @@
+class Solution {
+  public:
+    int minimumSum(string s) {
+        // code here
+        
+        /* 
+            1) check if pallindrome or not. 
+            2) fetching for min. 
+            
+        */
+        
+        // checking palindrome. 
+        
+        int n = s.size();
+        int l=0;
+        int r = n-1;
+        
+        while(l < r){
+            if(s[l] != s[r]) {
+                if(s[l] == '?') 
+                    s[l] = s[r];
+                    
+                else if(s[r] == '?') 
+                    s[r] = s[l];
+                    
+                else return  -1;
+            }
+            
+            l++;
+            r--;
+            
+        }
+        
+        int i=0,ans = 0;
+        int first,second;
+        
+        // next part of solution, iterating. 
+        
+        while(i<n && s[i] == '?') 
+            i++;
+        
+        // finding ascii value of i with reference to small a. 
+        if(i < n) {
+            first = s[i] - 'a';
+            i++;
+        }
+        
+        while(i < n){
+            while(i<n && s[i] == '?') 
+            // finding first. 
+                i++;
+            
+            if(i<n) { 
+                // finding second. 
+                second = s[i] - 'a';
+                ans += abs(first - second);
+                
+                first = second;
+            }
+            
+            i++;
+        }
+        
+        return ans;
+    }
+    
+    
+};
