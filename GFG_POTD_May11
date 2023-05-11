@@ -10,6 +10,10 @@ Difficulty : Medium
 
 Problem Link : https://practice.geeksforgeeks.org/problems/32dc957908c2eb8beeeaeedf81f37df20d37c308/1
 
+Given a string, S.The string can contain small case English letters or '?'. 
+You can replace '?' with any small English letter. Now if it is possible to make the string S a palindrome after replacing all '?' 
+then find the palindromic string with a minimum ascii sum of the absolute difference of adjacent characters. Otherwise, return -1.
+
 Cpp Solution 👇👇
 */
 
