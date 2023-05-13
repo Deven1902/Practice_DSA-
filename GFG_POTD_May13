@@ -17,10 +17,6 @@ Problem Link:- https://practice.geeksforgeeks.org/problems/ed0422e992899f3f46340
 Cpp Solution 👇👇
 */
 
-/* 
-Time Complexity: O(n) since one traversal is required.  
-Space Complexity: O(1) since no extra space is required.
-*/
 
 class Solution {
   public:
@@ -37,3 +33,7 @@ class Solution {
     }
 };
  
+/* 
+Time Complexity: O(n) since one traversal is required.  
+Space Complexity: O(1) since no extra space is required.
+*/
