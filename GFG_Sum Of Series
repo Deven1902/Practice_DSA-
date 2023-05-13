@@ -1,0 +1,25 @@
+/* 
+Author :- Deven Nandapurkar
+
+Level:- School Level. 
+
+Write a program to find the sum of the given series 1+2+3+ . . . . . .(N terms)  
+
+Problem Link:- https://practice.geeksforgeeks.org/problems/sum-of-series2811/1
+
+Cpp solution 👇👇
+*/
+
+class Solution{
+public:
+	// function to return sum of  1, 2, ... n
+	long long seriesSum(long long n) {
+	    // code here
+	    
+	    long long sum = (n * (n+1))/2;
+	    
+	    return sum;
+	   
+	   //return (n * (n+1))/2;
+	}
+};
