@@ -1,3 +1,23 @@
+/* 
+Author:- Deven Nandapurkar 
+
+Date:- 15th may 
+
+Difficulty:- Medium
+
+Problem:- Count Total Setbits 
+You are given a number N. Find the total number of setbits in the numbers from 1 to N.  
+
+Expected Time Complexity: O(1)
+Expected Auxiliary Space: O(1)
+
+Problem is difficult due to the same expected time complexity, other wise the brute force approach to this is very easy as it is not difficult to coun the SetBits. 
+
+Problem link:- https://practice.geeksforgeeks.org/problems/1132bd8ee92072cd31441858402641d6800fa6b3/1 
+
+Cpp solution below 👇👇
+*/
+
 class Solution {
   public:
     long long countBits(long long N) {
