@@ -50,3 +50,7 @@ class Solution {
         hence resolved that using the variable and cleared the sampel test case; 
     */
 };
+
+time complexity:- O(1) 
+
+Space Complexity :- O(1) 
