@@ -27,6 +27,26 @@ class Solution {
         
         // the digit 1 is known as set bit in the terms of the computer.
         
+        // below is the brute force approach.
+        
+        /* long long cnt = 0; // storing the number of set bits.
+        for(int i=1;i<=N;i++) {  
+            int x=i;
+            while(x){
+                if((x&1)==1) cnt++;  // bitwise operation with 1, then if its last bit is set then it gives 1 else return 0.
+                x /= 2; // we do x/2 everytime, so that in the next ieration we can check next bit is set or not. 
+            }
+        }
+        return cnt;
+        */
+        
+        // T.C:- o(n log n) 
+        // for counting set bits of every number we need logN, and we are doing it for n numbers. 
+        // hence n*logn.  
+        
+        
+        // my solution 👇👇
+        
         long long two = 2; 
         long long ans = 0;
         
@@ -42,6 +62,9 @@ class Solution {
         return ans;
     }
     
+    // time complexity:- O(1) 
+    // Space Complexity :- O(1) 
+    
     /*  the above solution is based on the fact that for the ith least significant bit, answer will be  
             (N/2^i)*2^(i-1)+ X 
             
@@ -49,8 +72,17 @@ class Solution {
         
         hence resolved that using the variable and cleared the sampel test case; 
     */
+    
+    // here is a fully optimized solution:- 
+        
+        long long count = 0;
+         for (int i = 0; i < 31; i++) {
+            int x = 1 << i; // calculate the ith bit
+            long long y = (N + 1) / (x * 2) * x; // count the number of set bits up to the ith bit
+            long long z = (N + 1) % (x * 2) - x; // count the number of set bits in the ith bit
+            count += y + std::max(z, 0LL); // add the counts to the total
+        }
+        return count;
+        
+        // end of optimised solution. 
 };
-
-time complexity:- O(1) 
-
-Space Complexity :- O(1) 
