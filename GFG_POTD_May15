@@ -1,0 +1,32 @@
+class Solution {
+  public:
+    long long countBits(long long N) {
+        // code here
+        
+        // binary number of an integer value then it is formed as the combination of 0's and 1's. 
+        
+        // the digit 1 is known as set bit in the terms of the computer.
+        
+        long long two = 2; 
+        long long ans = 0;
+        
+        long long n = N;
+        
+        while(n) {
+            ans += (N / two) * (two >> 1);
+            if ((N & (two - 1)) > (two >> 1) - 1)
+                ans += (N & (two - 1)) - (two >> 1) + 1;
+            two <<= 1;
+            n >>= 1;
+        }
+        return ans;
+    }
+    
+    /*  the above solution is based on the fact that for the ith least significant bit, answer will be  
+            (N/2^i)*2^(i-1)+ X 
+            
+        need to decalre variable two coz in the 2nd last line of the function... when i wrote 2<<=1; it threw compilation error at me; 
+        
+        hence resolved that using the variable and cleared the sampel test case; 
+    */
+};
