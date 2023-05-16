@@ -1,3 +1,19 @@
+/* 
+Author:- Deven Nandapurkar 
+
+Date:- 16th may. 
+
+Problem:- Given a string s containing 0's and 1's. You have to return the smallest positive integer C, 
+such that the binary string can be cut into C pieces and each piece should be of the power of 5  with no leading zeros.
+Note: The string s is a binary string. And if no such cuts are possible, then return -1.
+
+Problem Link:- https://practice.geeksforgeeks.org/problems/cutting-binary-string1342/1 
+
+Difficulty:- Mentioned Medium (felt hard to me)
+
+Cpp solution 👇👇
+*/
+
 class Solution{
     public:
     int cuts(string s){
