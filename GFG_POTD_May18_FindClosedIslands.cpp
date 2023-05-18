@@ -69,3 +69,8 @@ class Solution {
         return cnt++;
     }
 };
+
+// time complexity:- O(n*m); 
+// space complexity:- O(n*m); 
+
+// the auxilary complexities of the problem are same as that of the std DFS algo. 
