@@ -8,6 +8,9 @@ Given n ranges of the form [p, q] which denotes all the numbers in the range [p,
 Given another integer q denoting the number of queries. The task is to return the kth smallest element for each query (assume k>1) after combining all the ranges.
 In case the kth smallest element doesn't exist return -1. 
 
+Problem Link:- https://practice.geeksforgeeks.org/problems/find-k-th-smallest-element-in-given-n-ranges/1 
+
+Cpp solution below 👇👇
 */
 
 class Solution{
