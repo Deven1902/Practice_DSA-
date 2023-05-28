@@ -36,3 +36,7 @@ public:
            return temp2->data; 
     }
 };
+
+// time complexity:- O(n) -> while loop will run for the one iteration and hence n. 
+
+// space complexity:- O(1) -> takes constant extra space. 
