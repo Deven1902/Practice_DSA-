@@ -124,3 +124,5 @@ class Solution {
         return ans;
     }
 };
+
+// time complexoty:- O(n)
