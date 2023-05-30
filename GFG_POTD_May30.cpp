@@ -30,3 +30,52 @@ public:
         return false;
     }
 };
+
+// striver's solution below:- 
+
+class Solution {
+public:
+
+    bool dfs(int r, int c, vector<vector<int>>&visited,vector<vector<char>>& board,string word,int match){
+        int m = board.size(),n = board[0].size(), stLen = word.length();
+        
+        // dir array to traverse in all 4 directions
+        int dir[][4] = {{-1,0},{0,-1},{1,0},{0,1}};
+        visited[r][c] = 1;
+        
+        // checking if we have reached to end of string
+        if(match+1 == stLen)return true;
+        for(int i=0;i<4;i++){
+            int newRow = r + dir[i][0];
+            int newCol = c + dir[i][1];
+            int index = match+1;
+            
+            // boundary conditions and checking if characters are equal
+            if(newRow>=0 && newCol>=0 && newRow<m && newCol<n && board[newRow][newCol] == word[index] && visited[newRow][newCol]==0){
+                 if(dfs(newRow,newCol,visited,board,word,index))return true;
+            }
+        }
+        
+        // modifying the visited if we dont find the string in dfs call for further evaluation
+        visited[r][c] = 0;
+        return false;
+    }
+
+ 
+
+    bool isWordExist(vector<vector<char>>& board, string word) {
+        // Code here
+        int m = board.size(),n = board[0].size();
+        vector<vector<int>>visited(m,vector<int>(n,0));
+        
+        // calling dfs for initial matching word of string
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(board[i][j] == word[0]){
+                    if(dfs(i,j,visited,board,word,0) == true)return true;
+                }
+            }
+        }
+        return false;
+    }
+};
