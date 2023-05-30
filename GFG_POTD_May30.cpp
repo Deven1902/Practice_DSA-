@@ -80,3 +80,18 @@ public:
     }
 };
 
+/* 
+Complexity:- 
+1) Time complexity: O(N * M * 4L),  
+where N = No. of rows in board, M = No. of columns in the board, L = Length of the word.
+For every character of the board which matches the first character of the word, we have exactly 4 different choices or 4 different recursive paths
+(i.e. Left, Right, Up, and Down). 
+The base case is when we reach the end of the word i.e. the length of the word string. Hence, our complexity would be O(4L).
+And for visiting every character of the board before the recursive calls we are using nested loop which takes O(N*M).
+Hence Overall time complexity is O(N*M*4L).
+
+
+2) Space complexity: O(L)
+Where L is Length of the given word.
+As the recursive function goes up to L depth to search each character of the word so total auxiliary space taken by the recursive function will be O(L).
+*/
