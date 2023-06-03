@@ -119,3 +119,8 @@ public:
         return 0;
     }
 };
+
+
+// time complexity:- O(N)
+
+// space complexity:- O(1)
