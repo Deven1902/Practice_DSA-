@@ -1,3 +1,18 @@
+/* 
+
+Algorithm for solving the above problem:- 
+
+    Find the sum of all elements of in individual stacks.
+
+    If the sum of all three stacks is the same, then this is the maximum sum.
+
+    Else remove the top element of the stack having the maximum sum among three of stacks. Repeat step 1 and step 2.
+
+
+To make sum equal, we must remove some element from stack having more sum, and we can only remove from the top.
+
+*/
+
 /*
 class Solution{
 public:
