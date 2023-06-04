@@ -1,3 +1,20 @@
+/*
+Author:- Deven Nandapurkar. 
+
+GFG Problem of the day. 
+
+Date:- 4th June 2023. 
+
+Problem:- Reversing the equation
+    Given a mathematical equation that contains only numbers and +, -, *, /. 
+    Print the equation in reverse, such that the equation is reversed, but the numbers remain the same.
+    It is guaranteed that the given equation is valid, and there are no leading zeros.
+    
+Problem Link:- https://practice.geeksforgeeks.org/problems/reversing-the-equation2205/1 
+
+Cpp solution below 👇👇
+*/
+
 class Solution
 {
   public:
