@@ -56,3 +56,37 @@ class Solution {
 // time complexity:- O(N log N)
 
 // space complexity:- O(N)
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+// ALternate solution 
+
+class Solution {
+  public:
+    vector<int> leastPrimeFactor(int n) {
+        // code here
+        
+        // took an array to store all the N numbers. 
+        vector<int> ans(n+1);
+        
+        // initializing the index 1 to "1"
+        ans[1] = 1;
+        
+        // initializing rest of the values
+        for(int i = 2; i < n+1; i++) {
+            if(ans[i] == 0) {
+                ans[i] = i;
+                
+                // setting all the multiples of 2 as 2 itself. 
+                for(int j=2*i; j<n+1; j += i) {
+                    if(ans[j] == 0)
+                        ans[j] = i;
+                }
+            }
+        }
+        
+        return ans; 
+    }
+};
+
+// ---------------------------------------------------------------------------------------------------------------------------------
