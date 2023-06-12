@@ -18,4 +18,25 @@ class Solution{
         
         return price[n-1];
     }
+  
+  // brute force solution below. 
+  
+  //alternative recursive appoarch. 
+        
+  int cutRod(int price[], int n) {
+    
+    if(n<=0)
+            return 0; // this is base case. 
+            
+        int ans = INT_MIN;
+        for(int i=0; i<n; i++) {
+            int cut = i+1;
+            int cur_ans = price[i] + cutRod(price, n - cut);
+            
+            ans = max(ans, cur_ans);
+        }
+        
+        return ans;
+    }
+    // brute force solution gives TLE. 
 };
