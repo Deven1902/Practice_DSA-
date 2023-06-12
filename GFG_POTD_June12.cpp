@@ -10,7 +10,7 @@ class Solution{
             h=i-1;
             
             while(l<=h) {
-                price[i] = max(price[i], price[l] +  price[h]);
+                price[i] = max(price[i], price[l] + price[h]);
                 l++;
                 h--;
             }
@@ -18,14 +18,13 @@ class Solution{
         
         return price[n-1];
     }
-  
-  // brute force solution below. 
-  
-  //alternative recursive appoarch. 
+        // brute force solution below. 
         
-  int cutRod(int price[], int n) {
-    
-    if(n<=0)
+        
+        //alternative recursive appoarch. 
+        
+        /*
+        if(n<=0)
             return 0; // this is base case. 
             
         int ans = INT_MIN;
@@ -38,5 +37,10 @@ class Solution{
         
         return ans;
     }
+    */
     // brute force solution gives TLE. 
+    
+    // time complexity:- O(N^N) -. exponential as we are covering all the prices for all the possible cuts. 
+    // space complexity:- O(1) -> no extra space used. 
+    
 };
