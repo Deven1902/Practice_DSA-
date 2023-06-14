@@ -4,7 +4,7 @@ class Solution {
         // code here
         
         // brute force approach.
-        
+        /*
         int ans=0;
         
         while(k--) {
@@ -14,5 +14,25 @@ class Solution {
         }
         
         return ans;
+        */
+        
+        // optimised solution using priority queue
+        
+        priority_queue<long long> q;
+        
+        long long cnt = 0;
+        
+        for(int i=0; i<n; i++) 
+            q.push(a[i]);
+            
+        while(k--) {
+            long long t = q.top();
+            
+            cnt += q.top();
+            q.pop();
+            q.push(t/2);
+        }
+        
+        return cnt;
     }
 };
