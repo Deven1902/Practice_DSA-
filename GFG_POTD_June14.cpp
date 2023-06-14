@@ -34,5 +34,10 @@ class Solution {
         }
         
         return cnt;
+        
+        // time complexity :- O(N log n) -> N time for storing elements in the PQ, 
+        //                    next log n time for the while loop for down slicing the queue. 
+        
+        // space complexity:- O(n) -> extra space taken by the priority queue. 
     }
 };
