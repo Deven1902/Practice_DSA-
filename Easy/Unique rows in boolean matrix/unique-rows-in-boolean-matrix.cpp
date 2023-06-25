@@ -37,6 +37,29 @@ class Solution
         }
         return res;
     }
+
+// alternative solution. 
+    vector<vector<int>> uniqueRow(int M[MAX][MAX],int row,int col)
+    {
+        //Your code here
+        
+        vector<vector<int>> ans;
+        set<vector<int>> s;
+        
+        for(int i=0;i<row;i++){
+            vector<int> x;
+            for(int j=0;j<col;j++){
+                x.push_back(M[i][j]);
+            }
+            
+            if(s.find(x)==s.end()){
+                ans.push_back(x);
+                s.insert(x);
+            }
+        }
+        
+        return ans;
+    }
 };
 
 //{ Driver Code Starts.
