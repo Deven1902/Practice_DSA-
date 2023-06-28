@@ -27,3 +27,6 @@ class Solution{
         return max(l,r)+1;
     }
 };
+
+// Time complexity:- O(n) -> no. of iterations
+// Space Complexity:- O(h) -> height of the tree
