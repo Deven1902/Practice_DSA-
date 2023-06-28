@@ -29,6 +29,36 @@ Cpp solution 👇👇
     // 1. Merge Sort Technique uses a merge function to combine lists. So we don't need to write an explicit function for STEP 1.
     // 2. While merging the Elements of two lists, we can handle duplicate elements by adding a simple condition.
 
+// Pseudo Code:- 
+
+/* 
+function merge(List a, List b)  
+{
+      if( list a is null ) return list b
+      if(list b is null ) return list a
+
+       List ans = null
+
+      if(a.data<b.data) // add a node to answer
+      {
+          ans=a
+          ans.next=merge(a.next,b)
+      }
+      else if(b.data<a.data) // add b node to answer
+      {
+          ans=b
+          ans.next=merge(a,b.next)
+      }
+      else     //This is important to handle duplicate elements
+      {
+          ans=b // you can write a or b(any)
+          ans.next=merge(a.next,b.next)  //move both pointers.
+      }
+               return ans
+}
+    
+*/
+
 class Solution
 {
     
