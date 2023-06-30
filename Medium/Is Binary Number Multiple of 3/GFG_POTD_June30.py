@@ -13,3 +13,7 @@ class Solution:
 		    return 1
 		    
 	    return 0
+
+# time complexity:- O(n) -> n is the length of the string. 
+
+# space complexity:- O(1) -> np extra space is required. 
