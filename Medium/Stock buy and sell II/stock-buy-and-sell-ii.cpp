@@ -1,38 +1,23 @@
-//{ Driver Code Starts
-#include<bits/stdc++.h>
-using namespace std;
-
-
-class Array
-{
-public:
-    template <class T>
-    static void input(vector<T> &A,int n)
-    {
-        for (int i = 0; i < n; i++)
-        {
-            scanf("%d ",&A[i]);
-        }
-    }
-
-    template <class T>
-    static void print(vector<T> &A)
-    {
-        for (int i = 0; i < A.size(); i++)
-        {
-            cout << A[i] << " ";
-        }
-        cout << endl;
-    }
-};
-
-
-// } Driver Code Ends
-
 class Solution {
   public:
     int stockBuyAndSell(int n, vector<int> &prices) {
         // code here
+        
+        
+        // pesudo code:- 
+        
+        /*
+        
+            indeitfy input params
+            initiliaze max and min
+            loop thorugh prices and update min if found smaller
+            
+            calculate potential profit and add that to max if the current price is larger than mini
+            
+            update min to current price.
+            
+            return max.
+        */
         
         int maxi=0, mini=INT_MAX;
         
@@ -45,28 +30,3 @@ class Solution {
         return maxi;
     }
 };
-
-
-//{ Driver Code Starts.
-
-int main(){
-    int t;
-    scanf("%d ",&t);
-    while(t--){
-        
-        int n;
-        scanf("%d",&n);
-        
-        
-        vector<int> prices(n);
-        Array::input(prices,n);
-        
-        Solution obj;
-        int res = obj.stockBuyAndSell(n, prices);
-        
-        cout<<res<<endl;
-        
-    }
-}
-
-// } Driver Code Ends
