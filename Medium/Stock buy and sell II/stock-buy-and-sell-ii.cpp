@@ -1,9 +1,6 @@
 class Solution {
   public:
     int stockBuyAndSell(int n, vector<int> &prices) {
-        // code here
-        
-        
         // pesudo code:- 
         
         /*
@@ -19,6 +16,8 @@ class Solution {
             return max.
         */
         
+        // code here
+        
         int maxi=0, mini=INT_MAX;
         
         for(int i=0; i<n; i++) {
@@ -29,4 +28,8 @@ class Solution {
         }
         return maxi;
     }
+    
+    // time complexity-> O(N)
+    
+    // space complexity->O(1)
 };
