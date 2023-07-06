@@ -43,6 +43,12 @@ class Solution
        swap(arr[i+1],arr[high]);
        return i+1;
     }
+
+    // time complexity:- O(n log n)
+    // space complexity:-  in place algo, doesn't use extra space as such. 
+    //                     but as we are using recursive calls, the recursive calls use memory in that call stack. 
+                        
+    //                     avg case:- O(n). 
 };
 
 
