@@ -1,10 +1,3 @@
-//{ Driver Code Starts
-#include<bits/stdc++.h>
-using namespace std;
-#define MAX 1000
-
-// } Driver Code Ends
-
 class Solution
 {
     public:
@@ -47,32 +40,5 @@ class Solution
     }
 };
 
-
-//{ Driver Code Starts.
-int main()
-{
-    int T;
-    cin>>T;
-  
-    while(T--)
-    {
-        int n,m;
-        int k=0;
-        //cin>>k;
-        cin>>n>>m>>k;
-        int a[MAX][MAX];
-        
-        for(int i=0;i<n;i++)
-        {
-            for(int j=0;j<m;j++)
-            {
-                cin>>a[i][j];
-            }
-        }
-        Solution ob;
-        cout<<ob.findK(a,n,m,k)<<endl;
-        
-       
-    }
-}
-// } Driver Code Ends
+// Time Complexity : O(c) where c is number of outer circular rings with respect to k’th element.
+// Space complexity: O(1)
