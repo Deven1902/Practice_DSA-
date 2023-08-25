@@ -1,6 +1,19 @@
 #User function Template for python3
 
 
+
+#approach 
+
+'''
+1) To obtain the maximum absolute difference between the elements of the array
+2) Sort the array
+3) Initialise the result (res) with 0
+4) Start adding the absolute difference of the first and last elements of the array
+5) (which means adding the absolute difference of the maximum and minimum elements of the array each time)
+6) return result (res)
+
+'''
+
 def maxSum(arr,n):
     # code here
     
@@ -11,7 +24,6 @@ def maxSum(arr,n):
         res+=abs(arr[i]-arr[n-i-1])
         
     return res
-
 
 #{ 
  # Driver Code Starts
