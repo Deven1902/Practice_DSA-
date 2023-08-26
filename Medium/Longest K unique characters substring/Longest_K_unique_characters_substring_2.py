@@ -20,6 +20,12 @@ During this process, we keep track of the maximum window length encountered, whi
 Below is the optimized Solution:- 
 '''
 
+'''
+    The time complexity of this algorithm is O(N) 
+
+    The space complexity is O(K) 
+'''
+
 class Solution:
 
     def longestKSubstr(self, s, k):
