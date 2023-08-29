@@ -27,6 +27,27 @@ Input: 12 -> 15 -> 10 -> 11 -> 5 -> 6 -> 2 -> 3
 Output: 15 -> 11 -> 6 -> 3
 
 '''
+
+'''
+Approach Explanation
+The naive approach would involve iterating through each node and checking its value against the values of 
+nodes on its right. If a node's value is smaller than any of the nodes to its right, it should be deleted. 
+However, this approach would have a time complexity of O(N^2), which is not optimal for larger linked lists.
+
+Instead, we can take an efficient approach using reverse traversal and a greedy technique. We will traverse 
+the linked list in reverse order while maintaining two variables: `max_value` and `current_node`. 
+The `max_value` keeps track of the maximum value encountered so far, and the `current_node` is used to 
+iterate through the list.
+
+1. Initialize `max_value` with the value of the last node (tail node).
+2. Traverse the list in reverse order:
+   a. If the current node's value is greater than or equal to `max_value`, delete the current node.
+   b. If the current node's value is less than `max_value`, update `max_value` with the value of the 
+   current node.
+   
+   c. Move the `current_node` pointer to the previous node.
+'''
+
 class Solution:
     
     def reverse_linked_list(self, head):
