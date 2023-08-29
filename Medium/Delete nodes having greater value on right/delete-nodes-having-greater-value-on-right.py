@@ -79,7 +79,32 @@ class Solution:
 
         return self.reverse_linked_list(head)
 
-
+'''
+    Dry Run
+        Let's dry run the given example: `12 -> 15 -> 10 -> 11 -> 5 -> 6 -> 2 -> 3`
+        1. Reverse the Linked List to 
+        1. Initialize `max_value` to 3 and start from the last node (3).
+        2. Move to node 2. Since 2 < 3, update `max_value` to 2 and move to node 6.
+        3. Delete node 6 as 6 > 2.
+        4. Move to node 5. Delete node 5.
+        5. Move to node 11. Delete node 11.
+        6. Move to node 10. Delete node 10.
+        7. Move to node 15. Delete node 15.
+        8. The final list becomes 15 -> 11 -> 6 -> 3.
+        
+        Time and Space Complexity Analysis
+        T.C = O(N)
+        
+        The time complexity of the given approach is O(N) because we traverse the linked list once in reverse order.
+        
+        S.C = o(1) 
+        The space complexity is O(1) as we are using a constant amount of extra space regardless of the input size. 
+        We only require a few pointers to keep track of the nodes and the maximum value.
+        
+        
+    '''
+'''
+'''
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
