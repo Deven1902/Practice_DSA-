@@ -16,6 +16,17 @@ class Node:
     and analyze the time and space complexities.
     
 '''
+
+'''
+Problem Statement:- 
+Given a singly linked list, the task is to delete all the nodes that have a greater value on the right side.
+
+For example, consider the following linked list:
+
+Input: 12 -> 15 -> 10 -> 11 -> 5 -> 6 -> 2 -> 3
+Output: 15 -> 11 -> 6 -> 3
+
+'''
 class Solution:
     
     def reverse_linked_list(self, head):
