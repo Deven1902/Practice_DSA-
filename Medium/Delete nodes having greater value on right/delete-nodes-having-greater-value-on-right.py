@@ -48,6 +48,7 @@ iterate through the list.
    c. Move the `current_node` pointer to the previous node.
 '''
 
+# below is the optimised code:- 
 class Solution:
     
     def reverse_linked_list(self, head):
