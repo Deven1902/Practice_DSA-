@@ -7,7 +7,15 @@ class Node:
         self.next=None
 
 '''
-
+'''
+    When working with linked lists, it's not uncommon to encounter scenarios where you need to 
+    manipulate the list by removing certain nodes based on certain conditions. One such interesting 
+    problem is deleting nodes that have greater values on the right. In this article, we will explore the 
+    problem, provide a step-by-step explanation of the approach, present an optimized solution with a 
+    time complexity of O(N) and space complexity of O(1), perform a dry run to illustrate the process, 
+    and analyze the time and space complexities.
+    
+'''
 class Solution:
     
     def reverse_linked_list(self, head):
