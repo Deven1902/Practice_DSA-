@@ -30,6 +30,9 @@ class Solution:
         # Return perfect sum
         return dp[sum]
 
+# time complexiry:- O(n) => O(n*sum) 
+# space complexity:- O(sum) => DP array of sum takes up that space. 
+
 
 #{ 
  # Driver Code Starts
