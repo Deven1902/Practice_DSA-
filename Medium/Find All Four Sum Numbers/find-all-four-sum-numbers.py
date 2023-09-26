@@ -2,41 +2,34 @@
 
 # arr[] : int input array of integers
 # k : the quadruple sum required
+
+from collections import defaultdict
+
 class Solution:
     def fourSum(self, arr, k):
         # code here
         
         n = len(arr)
-        arr.sort()
-        res = []
-
-        for i in range(n-3):
-            # avoid the duplicates while moving i
-            if i > 0 and arr[i] == arr[i - 1]:
+        d = defaultdict(list)
+        for i in range(n - 1):
+            for j in range(i + 1, n):
+                d[arr[i] + arr[j]].append((i, j))
+        output = set()
+        visited = set()
+        for s, ijs in d.items():
+            if s in visited:
                 continue
-            for j in range(i+1, n-2):
-                # avoid the duplicates while moving j
-                if j > i + 1 and arr[j] == arr[j - 1]:
-                    continue
-                lo = j + 1
-                hi = n - 1
-                while lo < hi:
-                    temp = arr[i] + arr[j] + arr[lo] + arr[hi]
-                    if temp == k:
-                        res += [arr[i], arr[j], arr[lo], arr[hi]],
-
-                        # skip duplicates
-                        while lo < hi and arr[lo] == arr[lo + 1]:
-                            lo += 1
-                        lo += 1
-                        while lo < hi and arr[hi] == arr[hi - 1]:
-                            hi -= 1
-                        hi -= 1
-                    elif temp < k:
-                        lo += 1
-                    else:
-                        hi -= 1
-        return res
+            r = k - s
+            if r not in d:
+                continue
+            visited.add(r)
+            for i, j in ijs:
+                for kl in d[r]:
+                    if i not in kl and j not in kl:
+                        output.add(tuple(sorted(
+                            (arr[i], arr[j], arr[kl[0]], arr[kl[1]])
+                        )))
+        return sorted(output)
 
 
 #{ 
