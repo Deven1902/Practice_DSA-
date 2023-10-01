@@ -4,6 +4,21 @@ using namespace std;
 
 // } Driver Code Ends
 
+/* 
+Approach:- 👇
+
+
+run 4 for loops :
+     top row (left to right)
+     right column (top to bottom)
+     bottom row (right to left)
+     left column ( bottom to up)
+
+//  Note that the corner elements will be considered twice in the loops. 
+//  so device your for loop conditions in such a way that the elements dont get repeated. 
+
+*/
+
 class Solution
 {   
     public:
