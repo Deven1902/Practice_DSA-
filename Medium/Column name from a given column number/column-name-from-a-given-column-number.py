@@ -17,7 +17,10 @@ class Solution:
             n = (n-1)//26
             
         return title
+        
+# time complexity:- O(log n)
 
+# space complexity:- O(1) 
 
 #{ 
  # Driver Code Starts
