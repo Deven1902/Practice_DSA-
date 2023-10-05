@@ -51,15 +51,6 @@ class Solution:
         
         return self.count_substrings_with_k_distinct_characters(s, k) - self.count_substrings_with_k_distinct_characters(s, k - 1)
 
+# time complexity:- O(n)  -> N is the length of the input string.
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
-
-t = int (input ())
-for tc in range (t):
-    s = input ()
-    k = int (input ())
-    ob = Solution()
-    print (ob.substrCount (s, k))
-# } Driver Code Ends
+# space complexity:- O(K) -> K is the number of distinct characters allowed (given as input)
