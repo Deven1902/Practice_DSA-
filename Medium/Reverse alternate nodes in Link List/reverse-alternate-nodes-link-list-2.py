@@ -46,3 +46,8 @@ class Solution:
         else:
             previous_odd.next = previous_even
 
+# Time complexity:- O(n) 
+# n is the number of nodes in the linked list. We traverse the list once. 
+
+# Space complexity:- O(1) 
+# we do not use any extra data structures, and the space required is constant.
