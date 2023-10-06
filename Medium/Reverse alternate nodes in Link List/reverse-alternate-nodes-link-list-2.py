@@ -1,3 +1,18 @@
+
+'''
+Approach:- 
+
+The problem involves a multi-step process:
+
+    1. Extract the alternative nodes from the linked list.
+    2. Reverse the extracted list.
+    3. Append the reversed list back to the original list.
+
+The key to solve this problem is traversing the original list, mainitaing 2 pointers: one for the odd nodes & one for even. 
+We will reverse the even nodes as we extract them, and finally connect the last odd nodes to the reversed even nodes. 
+
+'''
+
 class Solution:
     def rearrange(self, head):
         # Code here
