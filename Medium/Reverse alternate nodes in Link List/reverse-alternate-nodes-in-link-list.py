@@ -10,6 +10,16 @@ class Node:
 		self.next = None
 
 """
+
+'''
+Approach:- 
+
+No need to reverse the linked list. 
+
+find the first and the last node
+then traverse the linked list and insert all the alternate nodes at the tail, no need to reverse.
+'''
+
 class Solution:
     def rearrange(self, head):
         # Code here
