@@ -5,11 +5,9 @@ class Solution:
     #Function to check if two strings are rotations of each other or not.
     def areRotations(self,s1,s2):
         #code here
-        
-        for i in range(len(s1)):
-            if s1==s2:
-                return 1
-            s1 = s1[1:]+s1[0]
+        if s1 in s2*2:
+            return 1
+            
         return 0
 
 
