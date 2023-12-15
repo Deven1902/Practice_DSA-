@@ -1,5 +1,3 @@
-#User function Template for python3
-
 class Solution:
 	def nthPoint(self,n):
 		# Code here
@@ -15,19 +13,5 @@ class Solution:
  		# return ans
 		return dp[n-1]
 
-
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
-
-import sys
-sys.setrecursionlimit(10**6)
-
-if __name__ == '__main__':
-	T=int(input())
-	for i in range(T):
-		n = int(input())
-		ob = Solution();
-		ans = ob.nthPoint(n)
-		print(ans)
-# } Driver Code Ends
+# time complexity:- o(N) 
+# space complexity:- O(N) -> Dp list stores valyes, which takes O(N) space. 
