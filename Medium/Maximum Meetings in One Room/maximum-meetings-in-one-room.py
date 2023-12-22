@@ -4,34 +4,13 @@ from typing import List
 class Solution:
     def maxMeetings(self, N : int, S : List[int], F : List[int]) -> List[int]:
         # code here
-        
-        pairs=[]
+        meetings = sorted([(i+1, s, f) for i, (s, f) in enumerate(zip(S, F))], key=lambda e: (e[2], e[0]))
 
-        for i in range(N):
-
-            pairs.append([S[i],F[i],i+1])
-
-        pairs.sort(key=lambda x:x[1])
-
-        count=[]
-
-        curr=pairs[0][1]
-
-        count.append(pairs[0][2])
-
-        for i in range(1,N):
-
-            if pairs[i][0]>curr:
-
-                count.append(pairs[i][2])
-
-                curr=pairs[i][1]  
-
-        count.sort()
-
-        return count
-
-
+        ans = []
+        for i, s, _ in meetings:
+            if not ans or s > F[ans[-1]-1]:
+                ans.append(i)
+        return sorted(ans)
 
 
 
