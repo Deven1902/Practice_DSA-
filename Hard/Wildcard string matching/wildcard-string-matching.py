@@ -1,33 +1,30 @@
 #User function Template for python3
 
 class Solution:
-    def match(self, wild, patt):
+    def match(self, wild, pattern):
         # code here
         
-           n = len(patt)
-           m = len(wild)
-           
-           dp = [[0 for i in range(m+1)] for j in range(n+1)]
-           
-           dp[0][0] = 1
-           
-           i = 0
-           while i < m and wild[i] == "*":
-               dp[0][i+1] = 1 
-               i += 1
-               
-           for i in range(1, n+1):
-               for j in range(1, m+1):
-                   
-                   if wild[j-1] == "*":
-                       dp[i][j] = max(dp[i][j-1], dp[i-1][j-1], dp[i-1][j])
-                       
-                   elif patt[i-1] == wild[j-1] or wild[j-1] == "?": 
-                       dp[i][j] = dp[i-1][j-1]
-                       
-                   
-                   
-           return dp[n][m]
+        p,w,pstar,wstar,m,n=0,0,-1,-1,len(pattern),len(wild)
+        wild+='_'
+        while p<m:
+            if pattern[p]==wild[w] or wild[w]=='?':
+                p+=1
+                w+=1
+            elif wild[w]=='*':
+                wstar=w
+                w+=1
+                pstar=p
+            elif wstar>=0:
+                w=wstar+1
+                pstar+=1
+                p=pstar
+            else:
+                return False
+        while w<n:
+            if wild[w]!='*':
+                return False
+            w+=1
+        return True
 
 
 #{ 
