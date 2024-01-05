@@ -1,3 +1,4 @@
+// quick sort method by Lakshya bhaiya
 class Solution
 {
     public:
